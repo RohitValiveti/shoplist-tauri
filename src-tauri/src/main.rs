@@ -4,6 +4,14 @@
   windows_subsystem = "windows"
 )]
 
+// #[tauri::command]
+// async fn open_add_win(handle: tauri::AppHandle){
+//   let win = tauri::WindowBuilder::new(
+//     &handle,
+//     "add", tauri::WindowUrl::App("addItem.html".into())
+//   ).build().unwrap();
+// }
+
 fn main() {
   let context = tauri::generate_context!();
     use tauri::{CustomMenuItem, Menu, MenuItem, Submenu};
@@ -22,7 +30,7 @@ fn main() {
       .add_submenu(file)
       .add_submenu(dev_tools);
 
-
+      
       tauri::Builder::default()
         .menu(menu)
         .on_menu_event(|event|{
@@ -31,7 +39,7 @@ fn main() {
               std::process::exit(0);
             }
             "add item" => {
-
+              
             }
             "clear items" => {
               
