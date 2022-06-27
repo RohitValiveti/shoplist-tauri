@@ -59,7 +59,18 @@
         "height": 600,
         "resizable": true,
         "title": "ShoppingList",
-        "width": 800
+        "width": 800,
+        "url": "index.html",
+        "label": "main"
+      },
+      {
+        "fullscreen": false,
+        "height": 200,
+        "resizable": true,
+        "title": "Add Item",
+        "width": 300,
+        "url": "addItem.html",
+        "label": "add"
       }
     ]
   }
