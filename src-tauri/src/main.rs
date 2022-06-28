@@ -4,13 +4,13 @@
   windows_subsystem = "windows"
 )]
 
-// #[tauri::command]
-// async fn open_add_win(handle: tauri::AppHandle){
-//   let win = tauri::WindowBuilder::new(
-//     &handle,
-//     "add", tauri::WindowUrl::App("addItem.html".into())
-//   ).build().unwrap();
-// }
+#[tauri::command]
+async fn open_add_win(handle: tauri::AppHandle){
+  let win = tauri::WindowBuilder::new(
+    &handle,
+    "add", tauri::WindowUrl::App("addItem.html".into())
+  ).build().unwrap();
+}
 
 fn main() {
   let context = tauri::generate_context!();
@@ -39,7 +39,7 @@ fn main() {
               std::process::exit(0);
             }
             "add item" => {
-              
+              open_add_win(event);
             }
             "clear items" => {
               
